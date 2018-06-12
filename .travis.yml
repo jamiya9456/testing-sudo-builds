@@ -19,6 +19,7 @@ install:
   - sudo apt-get update
   - sudo apt-get -y install php7.2-cli
   - php -v
+  - sudo update-alternatives --set php /usr/bin/php7.2
 
 before_script:
   - php -v
