@@ -1,4 +1,4 @@
-sudo: required
+sudo: true
 
 language: php
 php: 7.1
@@ -22,6 +22,8 @@ install:
 before_script:
   - git clone https://github.com/EasyEngine/easyengine.git
   - ls -al
+  - cp prepare.sh easyengine/
   - cd easyengine
+  - ls -al
   - composer install --no-interaction
   - sudo ./prepare.sh
