@@ -14,7 +14,7 @@ before_install:
     fi
 
 install:
-  - ./php.sh
+  - sudo ./php.sh
 
 before_script:
   - git clone https://github.com/EasyEngine/easyengine.git
