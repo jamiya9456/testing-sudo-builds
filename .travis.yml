@@ -17,6 +17,7 @@ install:
   - sudo bash php.sh
 
 before_script:
+  - php -v
   - git clone https://github.com/EasyEngine/easyengine.git
   - ls -al
   - cp prepare.sh easyengine/
