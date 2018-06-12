@@ -20,15 +20,12 @@ before_install:
 
 install:
   - ls -al
-
-before_script:
   - git clone https://github.com/EasyEngine/easyengine.git
   - ls -al
   - cp prepare.sh easyengine/
   - cd easyengine
   - ls -al
   - composer install --no-interaction
-  #- php -dphar.readonly=0 ./utils/make-phar.php easyengine.phar --quite  > /dev/null
-  - ./prepare.sh
+  - php -dphar.readonly=0 ./utils/make-phar.php easyengine.phar --quite  > /dev/null
   - cat VERSION
   #- sudo php easyengine.phar cli info
