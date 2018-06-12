@@ -4,7 +4,7 @@ language: php
 matrix:
   include:
     - php: 7.1
-    - sudo: required
+    
 env:
   global:
     - PATH="$TRAVIS_BUILD_DIR/vendor/bin:$PATH"
