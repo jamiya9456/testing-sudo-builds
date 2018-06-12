@@ -1,4 +1,4 @@
-sudo: true
+sudo: required
 
 language: php
 php: 7.1
@@ -26,4 +26,4 @@ before_script:
   - cd easyengine
   - ls -al
   - composer install --no-interaction
-  - sudo ./prepare.sh
+  - ./prepare.sh
