@@ -28,6 +28,7 @@ before_script:
   - cd easyengine
   - ls -al
   - composer install --no-interaction
-  - php -dphar.readonly=0 ./utils/make-phar.php easyengine.phar --quite  > /dev/null
-  - sudo ls
-  - sudo php easyengine.phar cli info
+  #- php -dphar.readonly=0 ./utils/make-phar.php easyengine.phar --quite  > /dev/null
+  - ./prepare.sh
+  - cat VERSION
+  #- sudo php easyengine.phar cli info
