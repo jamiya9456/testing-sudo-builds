@@ -1,0 +1,27 @@
+sudo: required
+
+language: php
+php: 7.1
+
+env:
+  global:
+    - PATH="$TRAVIS_BUILD_DIR/vendor/bin:$PATH"
+
+before_install:
+  - |
+    # Remove Xdebug for a huge performance increase:
+    if [ -f ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/xdebug.ini ]; then
+      phpenv config-rm xdebug.ini
+    else
+      echo "xdebug.ini does not exist"
+    fi
+
+install:
+  - ls -al
+
+before_script:
+  - git clone https://github.com/EasyEngine/easyengine.git
+  - ls -al
+  - cd easyengine
+  - composer install --no-interaction
+  - sudo ./prepare.sh
