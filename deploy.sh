@@ -1,0 +1,1 @@
+sudo /usr/bin/php7.2 easyengine.phar site list
