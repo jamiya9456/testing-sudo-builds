@@ -1,5 +1,7 @@
 sudo: required
 
+language: php
+
 env:
   global:
     - PATH="$TRAVIS_BUILD_DIR/vendor/bin:$PATH"
@@ -23,9 +25,26 @@ install:
   - git clone https://github.com/EasyEngine/easyengine.git
   - ls -al
   - cp prepare.sh easyengine/
+  - cp deploy.sh easyengine/
   - cd easyengine
   - ls -al
   - composer install --no-interaction
-  - sudo /usr/bin/php7.2 -dphar.readonly=0 ./utils/make-phar.php easyengine.phar --quite  > /dev/null
-  - cat VERSION
+  
+before_script:
+- ./prepare.sh
+
+jobs:
+  include:
+    - stage: deploy
+      env: DEPLOY_BRANCH=master-v4
+      script: ./deploy.sh
+
+cache:
+  directories:
+    - $HOME/.composer/cache
+
+notifications:
+  email:
+    on_success: never
+    on_failure: change
   #- sudo php easyengine.phar cli info

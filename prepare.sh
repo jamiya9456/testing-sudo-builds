@@ -1,5 +1,5 @@
 #!/bin/bash
 
 # called by Travis CI
-php -dphar.readonly=0 ./utils/make-phar.php easyengine.phar --quite  > /dev/null
-php easyengine.phar cli info
+sudo /usr/bin/php7.2 -dphar.readonly=0 ./utils/make-phar.php easyengine.phar --quite  > /dev/null
+sudo /usr/bin/php7.2 easyengine.phar cli info
