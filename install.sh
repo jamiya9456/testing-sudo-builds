@@ -41,8 +41,16 @@ function setup_php_modules {
     fi
 }
 
+function download_and_install_easyengine {
+    # Download EasyEngine phar.
+    wget -O /usr/local/bin/ee https://raw.githubusercontent.com/EasyEngine/easyengine-builds/master/phar/easyengine.phar
+    # Make it executable.
+    chmod +x /usr/local/bin/ee
+}
+
 function setup_dependencies {
     setup_php
     setup_php_modules
+    download_and_install_easyengine
 }
 setup_dependencies
