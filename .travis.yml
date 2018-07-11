@@ -17,7 +17,9 @@ before_install:
     fi
 
 install:
-  - wget -qO ee https://rt.cx/ee4beta && sudo bash ee
+  - bash install.sh
+  - sudo ee cli update --nightly --yes
+  - sudo ee cli update --stable --yes
   - sudo ee cli update --yes
 
 cache:
