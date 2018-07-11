@@ -25,13 +25,13 @@ function setup_php() {
 function setup_php_modules {
     # Setting up the three required php extensions for EasyEngine.
     php_modules=( pcntl curl sqlite3 )
-    if command -v php >> $LOG_FILE 2>&1; then
+    if command -v php > /dev/null 2>&1; then
       # Reading the php version.
       default_php_version="$(readlink -f /usr/bin/php | gawk -F "php" '{ print $2}')"
       echo "Installed PHP : $default_php_version"
       echo "Checking if required PHP modules are installed..."
       for module in "${php_modules[@]}"; do
-        if ! php -m | grep $module >> $LOG_FILE 2>&1; then
+        if ! php -m | grep $module > /dev/null 2>&1; then
           echo "$module not installed. Installing..."
           apt install -y php$default_php_version-$module
         else
