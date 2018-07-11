@@ -34,11 +34,6 @@ install:
 before_script:
 - ./prepare.sh
 
-jobs:
-  include:
-    - stage: deploy
-      env: DEPLOY_BRANCH=master-v4
-      script: ./deploy.sh
 
 cache:
   directories:
