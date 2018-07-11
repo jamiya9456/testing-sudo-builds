@@ -17,7 +17,7 @@ before_install:
     fi
 
 install:
-  - bash install.sh
+  - sudo bash install.sh
   - sudo ee cli update --nightly --yes
   - sudo ee cli update --stable --yes
   - sudo ee cli update --yes
