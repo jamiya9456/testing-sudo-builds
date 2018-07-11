@@ -23,7 +23,9 @@ install:
   - sudo apt-get -y install php7.2-cli
   - /usr/bin/php7.2 -v
   - ls -al
+  - cd ..
   - pwd
+  - ls -al
   - git clone https://github.com/EasyEngine/easyengine.git
   - ls -al
   - cp prepare.sh easyengine/
