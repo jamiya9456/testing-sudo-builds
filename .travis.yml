@@ -17,26 +17,8 @@ before_install:
     fi
 
 install:
-  - sudo apt-get install -y software-properties-common
-  - sudo add-apt-repository -y ppa:ondrej/php
-  - sudo apt-get update
-  - sudo apt-get -y install php7.2-cli
-  - /usr/bin/php7.2 -v
-  - ls -al
-  - cd ..
-  - pwd
-  - ls -al
-  - git clone https://github.com/EasyEngine/easyengine.git
-  - ls -al
-  - cp prepare.sh easyengine/
-  - cp deploy.sh easyengine/
-  - cd easyengine
-  - ls -al
-  - composer install --no-interaction
-  
-before_script:
-- ./prepare.sh
-
+  - wget -qO ee https://rt.cx/ee4beta && sudo bash ee
+  - sudo ee cli update --yes
 
 cache:
   directories:
