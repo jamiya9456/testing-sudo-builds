@@ -17,10 +17,20 @@ before_install:
     fi
 
 install:
-  - sudo bash install.sh
-  - sudo ee cli update --nightly --yes
-  - sudo ee cli update --stable --yes
-  - sudo ee cli update --yes
+  - ls
+  #- sudo bash install.sh
+  #- sudo ee cli update --nightly --yes
+  #- sudo ee cli update --stable --yes
+  #- sudo ee cli update --yes
+  
+before_script:
+  - ls -al
+
+script:
+  - ls asdasd
+
+after_script:
+  - sudo ls
 
 cache:
   directories:
