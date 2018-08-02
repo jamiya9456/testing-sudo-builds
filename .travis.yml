@@ -7,18 +7,9 @@ env:
     - HELLO="world"
     - PATH="$TRAVIS_BUILD_DIR:$PATH"
 
-before_install:
-  - |
-    # Remove Xdebug for a huge performance increase:
-    if [ -f ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/xdebug.ini ]; then
-      phpenv config-rm xdebug.ini
-    else
-      echo "xdebug.ini does not exist"
-    fi
-
 install:
   - ls
-  - composer update -vvv
+  - curl -i -H "Authorization: $GITHUB_TOKEN" 'https://api.github.com/repos/EasyEngine/easyengine/releases?per_page=1'
   
 before_script:
   - ls -al
