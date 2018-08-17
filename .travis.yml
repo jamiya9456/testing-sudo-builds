@@ -12,7 +12,7 @@ install:
   - bash run.sh
   
 before_script:
-  - ls -al
+  - ls
 
 script:
   - ls
