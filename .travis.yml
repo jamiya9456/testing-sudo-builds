@@ -9,7 +9,7 @@ env:
 
 install:
   - ls
-  - bash run.sh
+  - bash deploy.sh
   
 before_script:
   - ls
