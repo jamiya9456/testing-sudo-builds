@@ -22,7 +22,7 @@ if [[ $commit_msg = *"[BREAKING CHANGES]"* ]]; then
 		fi
 	done
 
-	pushd vendor/easyengine
+
 
 	for repo in ${repos[@]}; do
 		owner_name_unclean=${repo%%\/*}
@@ -30,7 +30,7 @@ if [[ $commit_msg = *"[BREAKING CHANGES]"* ]]; then
 		repo_with_branch=${repo#*\/}
 		repo_name=${repo_with_branch%\:*}
 		repo_branch=${repo_with_branch#*\:}
-		sudo rm -r "$repo_name"
+		#sudo rm -rf "$repo_name"
 		git clone https://github.com/"$owner_name"/"$repo_name".git -b "$repo_branch"
 		pushd "$repo_name"
 		echo "Updated to easyengine/$repo_name to $owner_name/$repo_name"
@@ -39,5 +39,4 @@ if [[ $commit_msg = *"[BREAKING CHANGES]"* ]]; then
 		popd
 	done
 
-	popd
 fi
