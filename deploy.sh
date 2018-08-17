@@ -15,7 +15,7 @@ if [[ $commit_msg = *"[BREAKING CHANGES]"* ]]; then
 
 	declare -a repos
 
-	for word in $commit_message; do
+	for word in $commit_msg; do
 		[[ $word =~ $pattern ]]
 		if [[ ${BASH_REMATCH[0]} ]]; then
 			repos+=(${BASH_REMATCH[0]})
