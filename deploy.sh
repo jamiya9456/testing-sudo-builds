@@ -1,5 +1,3 @@
-
-
 if [[ "false" != "$TRAVIS_PULL_REQUEST" ]]; then
   commit_msg="$(git --no-pager log HEAD~1...HEAD~2 --pretty=%B)"
 else
