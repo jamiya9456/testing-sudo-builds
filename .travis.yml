@@ -9,13 +9,13 @@ env:
 
 install:
   - ls
-  - bash php.sh
+  - bash run.sh
   
 before_script:
   - ls -al
 
 script:
-  - ls asdasd
+  - ls
 
 after_script:
   - sudo ls
